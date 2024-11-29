@@ -24,7 +24,7 @@ namespace Krest
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)      // обработчик нажатия кнопки
         {
             switch(player)
             {
@@ -41,6 +41,50 @@ namespace Krest
                    
             }
             sender.GetType().GetProperty("Enabled").SetValue(sender, false);        // выключение кнопки, чтобы нельзя было нажать второй раз
+            checkwin();                                                             // проверка выигрыша
+        }
+        private void checkwin()                                                     // функция обработки проверки выигрыша
+        {
+            if(button1.Text==button2.Text && button2.Text == button3.Text)
+            {
+                if(button1.Text!="")
+                    MessageBox.Show("Вы победили");
+            }
+            if (button4.Text == button5.Text && button5.Text == button6.Text)
+            {
+                if (button4.Text != "")
+                    MessageBox.Show("Вы победили");
+            }
+            if (button7.Text == button8.Text && button8.Text == button9.Text)
+            {
+                if (button7.Text != "")
+                    MessageBox.Show("Вы победили");
+            }
+            if (button1.Text == button4.Text && button4.Text == button7.Text)
+            {
+                if (button1.Text != "")
+                    MessageBox.Show("Вы победили");
+            }
+            if (button2.Text == button5.Text && button5.Text == button8.Text)
+            {
+                if (button2.Text != "")
+                    MessageBox.Show("Вы победили");
+            }
+            if (button3.Text == button6.Text && button6.Text == button9.Text)
+            {
+                if (button3.Text != "")
+                    MessageBox.Show("Вы победили");
+            }
+            if (button1.Text == button5.Text && button5.Text == button9.Text)
+            {
+                if (button1.Text != "")
+                    MessageBox.Show("Вы победили");
+            }
+            if (button3.Text == button5.Text && button5.Text == button7.Text)
+            {
+                if (button3.Text != "")
+                    MessageBox.Show("Вы победили");
+            }
         }
     }
 }
