@@ -15,6 +15,15 @@ namespace Krest
         public Form1()
         {
             InitializeComponent();
+            this.Height = 800;
+            this.Width = 900;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+ 
+            sender.GetType().GetProperty("Text").SetValue(sender, "x");
+        
         }
     }
 }
